@@ -19,3 +19,13 @@ export const printHelp = () => {
         `
     );
 };
+
+export const printWeather = (response) => {
+    console.log(dedent
+        `${response.name} погода сегодня:
+         ${response.weather.pop().description}
+         Температура воздуха: ${response.main.temp.toFixed(0)} (Ощущается как ${response.main.feels_like.toFixed(0)})
+         Давление воздуха: ${response.main.pressure} мм
+         Скорость ветра: ${response.wind.speed} м/с;
+         `);
+};
