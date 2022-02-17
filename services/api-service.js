@@ -10,7 +10,7 @@ export const getWeatherByCityName = async (
     }
 ) => {
 
-    const {data} = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
+    const {data, statusText} = await axios.get("https://api.openweathermap.org/data/2.5/weather", {
         params: {
             "q": city,
             "appid": token,
@@ -19,5 +19,6 @@ export const getWeatherByCityName = async (
             units,
         }
     });
+    console.log(statusText);
     return data;
 };
