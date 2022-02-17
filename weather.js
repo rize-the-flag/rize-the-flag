@@ -49,8 +49,8 @@ const initCLI = async () => {
     if (args.t) {
         return await saveToken(args.t);
     }
-    getForekast();
+    await getForekast();
 
 };
 
-initCLI();
+await initCLI();
